@@ -2,7 +2,9 @@
 <div class="chat_title">
 <%= @room.name%>
 </div>
-<div class="exit_chat"><a Href="#">チャット終了</a></div>
+<div class="exit_chat">
+<%= link_to 'チャット終了', room_path(@room) , method: :delete  %>
+</div>
 </div>
 <div class="middle_chat">
 
