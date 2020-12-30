@@ -3,6 +3,7 @@
 <div class="exit_chat"><a Href="#">チャット終了</a></div>
 </div>
 <div class="middle_chat">
+
   <div class="message">
     <div class="upper-message">
       <div class="message-user">
@@ -14,7 +15,6 @@
     </div>
     <div class="lower-message">
       <div class="message-content">
-        おはよう
       </div>
     </div>
   </div>
@@ -35,13 +35,14 @@
     </div>
   </div>
 </div>
-<div class="bottom_chat">
+
+  <%= form_with model: [@room, @message], class: 'bottom_chat', local: true do |f| %>
   <div class="form">
-    <input placeholder="type a message" class="text_message">
-     <label class="form-image">
+    <%= f.text_field :content, class: 'text_message', placeholder: 'type a message' %>
+    <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%= f.file_field :image, class: 'hidden' %>
     </label>
   </div>
-    <input type="submit" value="送信" class="send">
-</div>
+  <%= f.submit '送信', class: 'send' %>
+<% end %>
