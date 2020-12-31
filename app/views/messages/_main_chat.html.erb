@@ -11,8 +11,8 @@
   <%= render partial:'message', collection: @messages%>
 </div>
 
-<div class="bottom_chat">
-  <%= form_with model: [@room, @message],local: true do |f| %>
+
+  <%= form_with model: [@room, @message],class: 'bottom_chat' ,local: true do |f| %>
   <div class="form">
       <%= f.text_field :content, class: 'text_message', placeholder: 'type a message' %>
       <label class="form-image">
@@ -22,4 +22,3 @@
   </div>
   <%= f.submit '送信', class: 'send' %>
   <% end %>
-  </div>
