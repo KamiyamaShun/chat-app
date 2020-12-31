@@ -75,6 +75,7 @@ a{
   background-color: #DDDDDD;
   padding: 20px 40px;
   display: flex;
+  justify-content: space-between;
 }
 /* .bottom_chat内部 */
 .form{
